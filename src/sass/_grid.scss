@@ -1,0 +1,32 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+@for $i from 1 through 4 {
+  $size: 100% / $i;
+  .grid__#{$i} {
+    flex-basis: $size;
+  }
+}
+
+$map: (
+  xl: 1200,
+  l: 1024,
+  m: 800,
+  s: 640,
+  xs: 460
+);
+@each $key, $val in $map {
+  @media all and (min-width: $val + px) {
+    @for $i from 1 through 4 {
+      $size: 100% / $i;
+      .grid__#{$key}--#{$i} {
+        flex-basis: $size;
+        width: 100%;
+      }
+    }
+  }
+}

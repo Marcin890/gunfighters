@@ -1,0 +1,405 @@
+// Board
+.board {
+  filter: brightness(1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("../../public/images/saloon.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__frame {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../public/images/frame.svg");
+
+    &--top {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 75px;
+      background-position: top center;
+    }
+    &--bottom {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 75px;
+      background-position: bottom center;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// game
+.game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: url("../../public/images/aim.png") 50 50, auto;
+}
+
+// Score
+.score {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 150px;
+  height: 80px;
+  color: $white-color;
+  display: none;
+  background-image: url("../../public/images/stain.svg");
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  &__text {
+    color: $white-color;
+    line-height: 80px;
+  }
+}
+
+// Saloon
+.saloon {
+  display: flex;
+  display: none;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  background-image: url("../../public/images/building.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.9);
+  max-width: 1000px;
+  padding: $xl-space $l-space 0 $l-space;
+  &__part {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-basis: 33%;
+    /* padding:10px; */
+    padding-bottom: 0;
+    /* align-items: flex-start; */
+    justify-content: space-around;
+  }
+}
+
+// Window
+.window {
+  background: $primary-color;
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  &__shutter {
+    width: 60px;
+    background-image: url("../../public/images/shutter.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    @include mq(s) {
+      display: flex;
+    }
+  }
+  &__frame {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    background-image: url("../../public/images/window.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    &--bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background-image: url("../../public/images/window-frame-bt.png");
+      background-position: left bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    @include mq(l) {
+      width: 140px;
+      height: 140px;
+    }
+  }
+}
+
+// Door
+.door {
+  background: $primary-color;
+  position: relative;
+  display: flex;
+  &__shutter {
+    width: 60px;
+    background-image: url("../../public/images/shutter.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__frame {
+    width: 100px;
+    height: 200px;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    background-image: url("../../public/images/door-frame.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include mq(l) {
+      width: 140px;
+      height: 240px;
+    }
+  }
+  &__bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    transform: translateY(-50%);
+    background-image: url("../../public/images/door.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+// Gunfighter
+
+.gunfighter {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 100%;
+  //   top: 10%;
+  left: 50%;
+  height: 300px;
+  width: 66%;
+  background-image: url("../../public/images/gunfighter.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+// Signboard
+
+.signboard {
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url("../../public/images/signboard2.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__text {
+    color: $white-color;
+    font-size: 50px;
+    text-align: center;
+    font-family: $primary-font;
+    opacity: 0.9;
+    text-shadow: #000 1px 1px;
+    flex-basis: 100%;
+  }
+}
+
+// Bullets
+.bullets {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  width: 100%;
+  z-index: 99;
+  text-align: left;
+}
+
+.bullet {
+  width: 20px;
+  height: 60px;
+  z-index: 99;
+  display: inline-grid;
+  margin-left: 5px;
+  background-image: url("../../public/images/bullet.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(10deg);
+}
+
+// Intro
+.intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+
+  &__description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+  }
+  &__text {
+  }
+  &__paragraph {
+    text-shadow: $shadow;
+    margin-bottom: $l-space;
+  }
+  &__title {
+    text-shadow: $shadow;
+  }
+
+  &__btn {
+    background-image: url("../../public/images/stain.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    width: 350px;
+    height: 70px;
+    &:hover {
+      filter: brightness(1.5);
+    }
+  }
+  &__link {
+    color: $white-color;
+    font-size: 24px;
+    padding: 15px 30px;
+    text-shadow: $shadow;
+    display: block;
+    &:hover {
+      // color: $gold-color;
+    }
+  }
+}
+
+// Round
+.round {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-image: url("../../public/images/stain.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  width: 600px;
+  height: 120px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    filter: brightness(1.5);
+  }
+
+  &__btn {
+    color: $gold-color;
+    font-size: 1.6rem;
+    &:hover {
+      // color: $white-color;
+    }
+  }
+  &__congrat {
+    color: $white-color;
+    text-transform: uppercase;
+    flex-basis: 100%;
+    font-size: 2.4rem;
+  }
+}
+
+// Gameover
+.gameover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-image: url("../../public/images/stain.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  width: 600px;
+  height: 120px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    filter: brightness(1.5);
+  }
+
+  &__btn {
+    color: $gold-color;
+    font-size: 1.6rem;
+    &:hover {
+      // color: $white-color;
+    }
+  }
+  &__text {
+    color: $white-color;
+    text-transform: uppercase;
+
+    font-size: 2.4rem;
+  }
+
+  &__score {
+    color: $white-color;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+  }
+}
+
+// Blood
+.blood {
+  width: 30px;
+  height: 30px;
+  transform: translate(-15px, -15px);
+  position: absolute;
+  background-image: url("../../public/images/stain.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 99;
+}
+
+// Special
+.showGunfigter {
+  top: 10%;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex !important;
+}
+
+.flex {
+  display: flex;
+}

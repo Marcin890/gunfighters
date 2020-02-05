@@ -1,0 +1,56 @@
+// VARIABLES
+
+// colors
+$primary-color: black;
+$white-color: white;
+$red-color: rgb(194, 2, 2);
+$gold-color: #c68f49;
+
+// fonts
+$primary-font: "Rye", cursive;
+$secondary-font: "Cookie", cursive;
+
+// shadow
+$shadow: $primary-color 1px 1px 1px;
+// space
+$s-space: 10px;
+$m-space: 25px;
+$l-space: 50px;
+$xl-space: 100px;
+
+// trasition
+$transition: 0.8s;
+
+// opacity
+$opacity: 0.7;
+
+// breakpoints
+$breakpoints: (
+  xs: (
+    min-width: 460px
+  ),
+  s: (
+    min-width: 640px
+  ),
+  m: (
+    min-width: 800px
+  ),
+  l: (
+    min-width: 1024px
+  ),
+  xl: (
+    min-width: 1200px
+  )
+);
+
+// media query
+@mixin mq($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+  @if ($size) {
+    @media #{$size} {
+      @content;
+    }
+  } @else {
+    @error '"#{$breakpoint}" - Nie rozpoznaje';
+  }
+}
