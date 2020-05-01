@@ -4,7 +4,7 @@
 $primary-color: black;
 $white-color: white;
 $red-color: rgb(194, 2, 2);
-$gold-color: #c68f49;
+$gold-color: #df9639;
 
 // fonts
 $primary-font: "Rye", cursive;
@@ -27,20 +27,20 @@ $opacity: 0.7;
 // breakpoints
 $breakpoints: (
   xs: (
-    min-width: 460px
+    min-width: 370px,
   ),
   s: (
-    min-width: 640px
+    min-width: 640px,
   ),
   m: (
-    min-width: 800px
+    min-width: 800px,
   ),
   l: (
-    min-width: 1024px
+    min-width: 1024px,
   ),
   xl: (
-    min-width: 1200px
-  )
+    min-width: 1200px,
+  ),
 );
 
 // media query

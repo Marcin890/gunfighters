@@ -52,9 +52,9 @@
 // Score
 .score {
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 0;
-  width: 150px;
+  width: 120px;
   height: 80px;
   color: $white-color;
   display: none;
@@ -63,9 +63,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: center;
+  @include mq(s) {
+    width: 150px;
+  }
   &__text {
     color: $white-color;
     line-height: 80px;
+    margin-left: 25px;
+    @include mq(s) {
+      margin-left: 0px;
+    }
   }
 }
 
@@ -82,8 +89,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   filter: brightness(0.9);
-  max-width: 1000px;
-  padding: $xl-space $l-space 0 $l-space;
+  max-width: 980px;
+  padding: 50px 20px 0px 20px;
+  @include mq(s) {
+    padding: 100px 20px 0px 20px;
+  }
+  @include mq(l) {
+    padding: 100px 40px 0px 40px;
+  }
   &__part {
     display: flex;
     flex-wrap: nowrap;
@@ -113,8 +126,8 @@
     }
   }
   &__frame {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin: 0;
     position: relative;
     overflow: hidden;
@@ -133,6 +146,12 @@
       background-repeat: no-repeat;
       background-size: contain;
     }
+
+    @include mq(s) {
+      width: 110px;
+      height: 110px;
+    }
+
     @include mq(l) {
       width: 140px;
       height: 140px;
@@ -153,8 +172,8 @@
     background-size: cover;
   }
   &__frame {
-    width: 100px;
-    height: 200px;
+    width: 120px;
+    height: 240px;
     margin: 0;
     position: relative;
     overflow: hidden;
@@ -162,9 +181,13 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include mq(s) {
+      width: 110px;
+      height: 220px;
+    }
     @include mq(l) {
       width: 140px;
-      height: 240px;
+      height: 280px;
     }
   }
   &__bg {
@@ -190,22 +213,24 @@
   //   top: 10%;
   left: 50%;
   height: 300px;
-  width: 66%;
+  width: 72%;
   background-image: url("../../public/images/gunfighter.png");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: contain;
+  @include mq(s) {
+    width: 66%;
+  }
 }
 
 // Signboard
 
 .signboard {
-  width: 300px;
-  height: 150px;
+  width: 200px;
+  height: 100px;
   position: absolute;
-  top: -20%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -10%;
+  left: 15px;
   background-image: url("../../public/images/signboard2.png");
   background-position: left bottom;
   background-repeat: no-repeat;
@@ -213,38 +238,62 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include mq(s) {
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   &__text {
     color: $white-color;
-    font-size: 50px;
+    font-size: 30px;
     text-align: center;
     font-family: $primary-font;
     opacity: 0.9;
     text-shadow: #000 1px 1px;
     flex-basis: 100%;
+    padding-top: 12px;
+
+    @include mq(s) {
+      font-size: 40px;
+    }
+    @include mq(l) {
+      font-size: 50px;
+    }
   }
 }
 
 // Bullets
 .bullets {
   position: absolute;
-  bottom: 30px;
-  left: 10px;
+  bottom: 40px;
+  right: 20px;
   width: 100%;
   z-index: 99;
-  text-align: left;
+  text-align: right;
+  @include mq(s) {
+    text-align: left;
+    left: 20px;
+  }
 }
 
 .bullet {
-  width: 20px;
-  height: 60px;
+  width: 15px;
+  height: 45px;
   z-index: 99;
   display: inline-grid;
-  margin-left: 5px;
+  margin-right: 7px;
   background-image: url("../../public/images/bullet.png");
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: contain;
   transform: rotate(10deg);
+  @include mq(s) {
+    width: 20px;
+    height: 60px;
+  }
 }
 
 // Intro
@@ -254,6 +303,7 @@
   left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
+  padding: 0px 10px;
 
   &__description {
     display: flex;
@@ -270,6 +320,7 @@
   }
   &__title {
     text-shadow: $shadow;
+    letter-spacing: 2px;
   }
 
   &__btn {
@@ -376,15 +427,25 @@
 
 // Blood
 .blood {
-  width: 30px;
-  height: 30px;
-  transform: translate(-15px, -15px);
+  width: 70px;
+  height: 70px;
+  transform: translate(-35px, -35px);
   position: absolute;
-  background-image: url("../../public/images/stain.png");
+  background-image: url("../../public/images/stain2.png");
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 99;
+  @include mq(s) {
+    width: 70px;
+    height: 70px;
+    transform: translate(-35px, -35px);
+  }
+  @include mq(l) {
+    width: 100px;
+    height: 100px;
+    transform: translate(-50px, -50px);
+  }
 }
 
 // Special
@@ -402,4 +463,21 @@
 
 .flex {
   display: flex;
+}
+
+.shadow {
+  width: 124%;
+  height: 200px;
+  opacity: 1;
+  background-image: url("../../public/images/shadow.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 100%;
+  left: -12%;
+  display: none;
+  @include mq(l) {
+    display: block;
+  }
 }

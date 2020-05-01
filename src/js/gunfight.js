@@ -136,7 +136,7 @@ function startRound() {
 }
 
 function startGame() {
-  gunfighters.forEach(g => g.classList.remove("showGunfigter"));
+  gunfighters.forEach((g) => g.classList.remove("showGunfigter"));
   gameOver.classList.remove("show");
   clearInterval(game);
   gameSettings();
@@ -152,8 +152,8 @@ function init() {
 
 start.addEventListener("click", init);
 
-gunfighters.forEach(g =>
-  g.addEventListener("click", e => {
+gunfighters.forEach((g) =>
+  g.addEventListener("click", (e) => {
     // Blood
     const x = e.pageX;
     const y = e.pageY;
